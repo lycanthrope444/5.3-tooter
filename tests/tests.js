@@ -69,13 +69,13 @@ describe('New Entry', function(){
 
   //Checks to see if the event handler is grabbing the contents of the form
   it('should trigger a create:post event on the document with the title and body', function(done){
-    $(document).on('.newEntry', function(event, post){
-      expect(post).to.have.property("Title");
-      expect(post).to.have.property("Body");
+    $(document).on('create:post', function(event, post){
+      expect(post).to.have.property("title");
+      expect(post).to.have.property("body");
       done();
     });
     $('.title').val("Title");
-    $('.body').val("Title");
+    $('.body').val("Body");
     $('.newPostBtn').submit();
 
   });

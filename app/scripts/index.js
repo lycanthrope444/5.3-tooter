@@ -7,6 +7,7 @@ $(function(){
 
   var view = new views.PostView();
 
+
   $(document).on('posts:fetch', function(event, posts){
     view.showPosts(posts);
   });

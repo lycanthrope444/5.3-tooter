@@ -25,7 +25,7 @@ describe('Post', function(){
         expect(post).to.have.property('_id');
 
         done();
-      })
+      });
     });
   });
 
@@ -53,5 +53,26 @@ describe('PostView', function(){
     });
 
   });
-  
+  // #######################
+  // Create Forum Post Test
+  // #######################
+  describe('Entry', function(){
+    it('should trigger a create:post event on the document with the title and body', function(){
+
+
+
+    });
+
+  });
+
+
+
+
+
+
+
+
+
+
+
 });

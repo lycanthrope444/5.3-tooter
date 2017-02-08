@@ -4,6 +4,7 @@ var $ = require('jquery');
 
 var Post = require('../app/scripts/models.js').Post;
 var PostView = require('../app/scripts/views.js').PostView;
+// var Entry = require('app/scripts/entry.js').Entry;
 
 // ##############################################
 // Model Tests
@@ -53,26 +54,30 @@ describe('PostView', function(){
     });
 
   });
+
+});
   // #######################
   // Create Forum Post Test
   // #######################
-  describe('Entry', function(){
-    it('should trigger a create:post event on the document with the title and body', function(){
+describe('New Entry', function(){
+  // var formContent, newEntry;
 
+  // Test Content
+  // beforeEach(function(){
+  //   formContent =
+  // });
 
-
+  //Checks to see if the event handler is grabbing the contents of the form
+  it('should trigger a create:post event on the document with the title and body', function(done){
+    $(document).on('.newEntry', function(event, post){
+      expect(post).to.have.property("Title");
+      expect(post).to.have.property("Body");
+      done();
     });
+    $('.title').val("Title");
+    $('.body').val("Title");
+    $('.newPostBtn').submit();
 
   });
-
-
-
-
-
-
-
-
-
-
 
 });
